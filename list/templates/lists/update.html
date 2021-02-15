@@ -1,0 +1,79 @@
+<html>
+<head>
+
+<link rel="stylesheet"  href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+{% load static %}
+<link rel="stylesheet"  type ="text/css" href="{% static  'list/style.css' %}"/>
+
+
+<title>project </title>
+
+</head>
+<body  >
+
+<nav class="navbar navbar-expand-lg navbar-light ">
+<div class="container">
+  <a class="navbar-brand" style="color:white" href="#">Administation</a>
+  
+
+  
+  </div>
+</nav>
+
+<div class="container">
+<div class="row">
+
+<!-- Button trigger modal -->
+<div class="col-sm-12 card bg-light text-black text-center fixed-center " style="margin-top:50px;margin-bottom:50px;">
+<div class="text-info  " style="font-size:50px"> <b> Update :</b></div>
+<button type="button" class="btn btn-dark col-sm-4" style="margin-top:50px" data-toggle="modal" data-target="#exampleModalCenter">
+  update {{item}}
+</button>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-center" id="exampleModalLongTitle">Inforamation</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form action="/admi/list/" method="post">
+      <div class="modal-body">
+        
+        
+        {%csrf_token%}
+<p class="form-text"> pays:{{form.name}}</p>
+<p>nb de cas:{{form.age}}</p>
+
+      </div>
+      <div class="modal-footer">
+      <input type="submit" class="btn btn-primary text-center" value="update"/>
+        </form>
+       <a href="/admi/list/"> <button type="button" class="btn btn-secondary" >Close</button>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+</div>
+</div>
+
+<footer>
+<nav class="navbar navbar-expand-lg navbar-light fixed-bottom"  >
+<p class="text-center text-white " style="font-size:20px"> copy right ©Mariem Marrekchi </p>
+</nav>
+</footer>
+<script src="{% static 'js/jquery.min.js'%}"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script src="{% static 'js/mdb.min.js'%}"></script>
+
+</body>
+</html>
+
